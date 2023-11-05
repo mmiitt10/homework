@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スマートサカバー</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="スマートサカバーのロゴ" id="logo">
+  <h1>スマートサカバー</h1>
+</header>
+
+<section id="description">
+  クイズでチェック、飲み過ぎ防止。スマートサカバーでよい夜を！
+</section>
+
+<div>
+  <input type="text" id="participantName" placeholder="参加者名を入力" />
+  <button id="register">参加者登録</button>
+  <button id="reset">リセット</button>
+</div>
+
+<ul id="participants">
+</ul>
+
+<!-- 問題表示エリア -->
+<div id="questionArea" style="display:none;">
+  <p id="question"></p>
+  <input type="text" id="answer" placeholder="答えを入力" />
+  <button id="submitAnswer">解答する</button>
+  <p id="result"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

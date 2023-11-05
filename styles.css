@@ -1,0 +1,109 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #f4e8c1;
+    background-image: url('img01.png.png'); /* Set initial background image */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #5a2c0e;
+    text-align: center;
+    padding: 5px; /* Reduced padding for smaller screens */
+    margin: 0; /* Remove default margin */
+  }
+  
+  header {
+    background-color: #d17b49;
+    padding: 10px 5px; /* Reduced horizontal padding for smaller screens */
+    display: flex;
+    justify-content: space-around; /* Space out logo and title */
+    align-items: center;
+    color: white;
+  }
+  
+  #logo {
+    width: 50px; /* Reduced logo size for smaller screens */
+    height: auto;
+  }
+  
+  h1 {
+    font-size: 1.2em; /* Reduced font size for smaller screens */
+  }
+  
+  #description {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+  }
+  
+  #participantName, #register, #reset {
+    width: 100%; /* Full width on smaller screens */
+    margin-top: 5px;
+  }
+  
+  #participants {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  #participants li {
+    background-color: #fffaf0;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #d3d3d3;
+  }
+  
+  #questionArea {
+    background-color: #fff8e8;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px #d3d3d3;
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #d17b49;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+  }
+  
+  button:hover {
+    background-color: #aa5d36;
+  }
+  
+  #result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #3e2723;
+  }
+  
+  /* Media query for larger screens */
+  @media (min-width: 600px) {
+    #participantName, #register, #reset {
+      width: auto; /* Auto width on larger screens */
+      margin: 0 10px; /* Add horizontal margin on larger screens */
+      display: inline-block; /* Inline display for side-by-side */
+    }
+  
+    #register, #reset {
+      margin-top: 0;
+    }
+  
+    header {
+      justify-content: start; /* Align items to the start on larger screens */
+    }
+  
+    #logo {
+      margin-right: 20px; /* Add margin between logo and title on larger screens */
+    }
+  }
+  

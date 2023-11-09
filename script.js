@@ -1,19 +1,41 @@
 $(document).ready(function () {
+
+  // 参加者名のデータをローカルストレージに貯める動作
+  // データが空の場合は、空の情報を返す
     let participants = JSON.parse(localStorage.getItem('participants')) || {};
+  
+  // 解答されない場合にエラーを出すためのブール関数
     let isQuestionAnswered = true;
   
-    function updateParticipantList() {
-      $('#participants').empty();
-      $.each(participants, function (name, drinks) {
-        $('#participants').append(
-          $('<li>').append(
-            `${name} - 飲んだ数: <span id="${name}-drinks">${drinks}</span> `,
-            $('<button>').text('お酒を頼む').prop('disabled', !isQuestionAnswered).click(function () { orderDrink(name); })
-          )
-        );
-      });
+
+// 参加者リストを更新
+function updateParticipantList() {
+  $('#participants').empty();
+
+  // participantsオブジェクトの各要素をliに格納
+  $.each(participants, function (name, drinks) {
+    const listItem = $('<li>').text(name + '  飲んだ数: ');
+
+    const drinksSpan = $('<span>').attr('id', name + '-drinks').text(drinks);
+    listItem.append(drinksSpan);
+
+    const orderButton = $('<button>').text('お酒を頼む');
+
+    orderButton.click(function () {
+      orderDrink(name);
+    });
+
+    // 問題が解答されていない場合はボタンを無効に
+    if (!isQuestionAnswered) {
+      orderButton.prop('disabled', true);
     }
-  
+
+    listItem.append(orderButton);
+
+    $('#participants').append(listItem);
+  });
+}
+
     function addParticipant() {
       const name = $('#participantName').val();
       if (name) {

@@ -1,48 +1,50 @@
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: #f4e8c1;
-    background-image: url('img01.png.png'); /* Set initial background image */
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    color: #5a2c0e;
-    text-align: center;
-    padding: 5px; /* Reduced padding for smaller screens */
-    margin: 0; /* Remove default margin */
-  }
-  
+  background-image: url('img01.png.png'); 
+  background-size: cover; /* 背景画像を画面全体に均等にカバーするように設定します。余白なく画面を埋めますが、画像が切れることがあります。 */
+  background-position: center center; /* 背景画像が常に要素の中心に位置するように設定します。 */
+  background-attachment: fixed; /* 背景画像をビューポートに対して固定し、コンテンツがスクロールしても背景画像は動かないように設定します。 */
+  color: #5a2c0e; 
+  text-align: center; 
+}
+
   header {
     background-color: #d17b49;
-    padding: 10px 5px; /* Reduced horizontal padding for smaller screens */
     display: flex;
-    justify-content: space-around; /* Space out logo and title */
     align-items: center;
+    padding: 5px 5px; 
     color: white;
   }
   
   #logo {
-    width: 50px; /* Reduced logo size for smaller screens */
+    width: 50px; 
     height: auto;
   }
   
   h1 {
-    font-size: 1.2em; /* Reduced font size for smaller screens */
+    font-size: 20px
   }
   
   #description {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 1em;
+    font-size: 0.8em;
   }
   
-  #participantName, #register, #reset {
-    width: 100%; /* Full width on smaller screens */
+  #participantName{
+    width: 100%; 
     margin-top: 5px;
   }
-  
+
+#register {
+    width: 100%; 
+    margin-top: 5px;
+  }
+#reset {
+    width: 100%; 
+    margin-top: 5px;
+  }
+
   #participants {
     list-style-type: none;
     padding: 0;

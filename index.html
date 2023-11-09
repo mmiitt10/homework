@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="styles.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
 
 <header>
@@ -14,24 +15,33 @@
   <h1>スマートサカバー</h1>
 </header>
 
+<!-- サービス説明 -->
 <section id="description">
   クイズでチェック、飲み過ぎ防止。スマートサカバーでよい夜を！
 </section>
 
+<!-- 参加者名登録 -->
 <div>
   <input type="text" id="participantName" placeholder="参加者名を入力" />
   <button id="register">参加者登録</button>
   <button id="reset">リセット</button>
 </div>
 
+<!-- 参加者名と飲んだお酒の数を表示 -->
 <ul id="participants">
 </ul>
 
-<!-- 問題表示エリア -->
+<!-- 問題を表示する -->
 <div id="questionArea" style="display:none;">
+
+  <!-- 問題表示エリア -->
   <p id="question"></p>
+
+  <!-- 解答入力欄 -->
   <input type="text" id="answer" placeholder="答えを入力" />
   <button id="submitAnswer">解答する</button>
+
+  <!-- 計算結果表示欄 -->
   <p id="result"></p>
 </div>
 

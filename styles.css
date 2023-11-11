@@ -1,8 +1,11 @@
 body {
   background-image: url('img01.png.png'); 
-  background-size: cover; /* 背景画像を画面全体に均等にカバーするように設定します。余白なく画面を埋めますが、画像が切れることがあります。 */
-  background-position: center center; /* 背景画像が常に要素の中心に位置するように設定します。 */
-  background-attachment: fixed; /* 背景画像をビューポートに対して固定し、コンテンツがスクロールしても背景画像は動かないように設定します。 */
+  background-size: cover; 
+  /* 背景画像を画面全体に均等にカバーするように設定します。余白なく画面を埋めますが、画像が切れることがあります。 */
+  background-position: center center; 
+  /* 背景画像が常に要素の中心に位置するように設定 */
+  background-attachment: fixed; 
+  /* 背景画像をビューポートに対して固定し、コンテンツがスクロールしても背景画像は動かないように設定 */
   color: #5a2c0e; 
   text-align: center; 
 }
@@ -31,20 +34,6 @@ body {
     font-size: 0.8em;
   }
   
-  #participantName{
-    width: 100%; 
-    margin-top: 5px;
-  }
-
-#register {
-    width: 100%; 
-    margin-top: 5px;
-  }
-#reset {
-    width: 100%; 
-    margin-top: 5px;
-  }
-
   #participants {
     list-style-type: none;
     padding: 0;
@@ -75,7 +64,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 10px;
+    padding: auto;
   }
   
   button:hover {
@@ -90,24 +79,41 @@ body {
     color: red;
   }
   
-  /* Media query for larger screens */
+/* やれる範囲でRWD */
+/* まずはデスクトップ版のデザイン */
   @media (min-width: 600px) {
-    #participantName, #register, #reset {
-      width: auto; /* Auto width on larger screens */
-      margin: 0 10px; /* Add horizontal margin on larger screens */
-      display: inline-block; /* Inline display for side-by-side */
-    }
-  
-    #register, #reset {
-      margin-top: 0;
-    }
-  
+
     header {
-      justify-content: start; /* Align items to the start on larger screens */
+      justify-content: start; 
+      /* 左上にそろえる※centerだとspのように真ん中に集まる仕様 */
+    }
+    #logo {
+      margin-right: 1em; 
+    }
+  }
+
+  /* sp版のデザイン指定 */
+  /* 文字サイズ等はPCベースのため、相対で設定する必要あり */
+  @media (max-width: 599px) {
+    header {
+      justify-content: center; 
+      /* ヘッダー内のアイテムを中央揃え */
+    }
+
+    #logo {
+      margin-right: 0.6em; 
+    }
+
+    h1 ,p{
+      font-size: 0.9em; 
+      /* タイトルのフォントサイズを親要素に対して縮小 */
     }
   
-    #logo {
-      margin-right: 20px; /* Add margin between logo and title on larger screens */
+    #participantName, #register, #reset {
+      width: 50%; 
+      margin: 5px 0; /* 上下に余白を設定し、周囲の要素から離れた見た目にします */
     }
   }
   
+  /* 楽にRWDを施すには、どのような構成・考え方を採用すべきか？ 
+  例えば、最初はpc版で作成し、それに対する相対比較のような形で文字サイズや余白を決めるべき？*/
